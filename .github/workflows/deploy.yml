@@ -76,11 +76,11 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          instance-ids: "${AWS-EC2-인스턴스-ID}"
+          instance-ids: "${i-00649abb57c1ce5eb}"
           working-directory: /
           comment: Deploy
           command: |
             mkdir -p /dockerProjects/${blog_1}
-            curl -o /dockerProjects/${blog_1}/zero_downtime_deploy.py https://raw.githubusercontent.com/${KOOTHEMAVERICK}/${깃허브-리포지터리명}/main/infraScript/zero_downtime_deploy.py
+            curl -o /dockerProjects/${blog_1}/zero_downtime_deploy.py https://raw.githubusercontent.com/${KOOTHEMAVERICK}/${deploy-demo-01-25-main}/main/infraScript/zero_downtime_deploy.py
             chmod +x /dockerProjects/${blog_1}/zero_downtime_deploy.py
             /dockerProjects/${blog_1}/zero_downtime_deploy.py
