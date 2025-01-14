@@ -46,7 +46,7 @@ class ServiceManager:
     # Docker 컨테이너를 실행하는 함수
     def _run_container(self, name: str, port: int) -> None:
         os.system(
-            f"docker run -d --name={name} --restart unless-stopped -p {port}:${http://172.17.0.1:8081} -e TZ=Asia/Seoul -v /dockerProjects/${blog_1}/volumes/gen:/gen --pull always ghcr.io/${KOOTHEMAVERICK}/${blog_1}")
+            f"docker run -d --name={name} --restart unless-stopped -p {port}:${http://172.17.0.1:8081} -e TZ=Asia/Seoul -v /dockerProjects/${blog_1}/volumes/gen:/gen --pull always ghcr.io/${koothemaverick}/${blog_1}")
 
     def _switch_port(self) -> None:
         # Socat 포트를 전환하는 함수
