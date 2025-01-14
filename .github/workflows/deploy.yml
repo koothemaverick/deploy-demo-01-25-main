@@ -63,8 +63,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ env.OWNER_LC }}/${blog}:${{ needs.makeTagAndRelease.outputs.tag_name }},
-            ghcr.io/${{ env.OWNER_LC }}/${blog}:latest
+            ghcr.io/${{ env.OWNER_LC }}/blog:${{ needs.makeTagAndRelease.outputs.tag_name }},
+            ghcr.io/${{ env.OWNER_LC }}/blog:latest
   deploy:
     runs-on: ubuntu-latest
     needs: [ buildImageAndPush ]
@@ -80,7 +80,7 @@ jobs:
           working-directory: /
           comment: Deploy
           command: |
-            mkdir -p /dockerProjects/${blog}
-            curl -o /dockerProjects/${blog}/zero_downtime_deploy.py https://raw.githubusercontent.com/koothemaverick/deploy-demo-01-25-main/main/infraScript/zero_downtime_deploy.py
-            chmod +x /dockerProjects/${blog}/zero_downtime_deploy.py
-            /dockerProjects/${blog}/zero_downtime_deploy.py
+            mkdir -p /dockerProjects/blog
+            curl -o /dockerProjects/blog/zero_downtime_deploy.py https://raw.githubusercontent.com/koothemaverick/deploy-demo-01-25-main/main/infraScript/zero_downtime_deploy.py
+            chmod +x /dockerProjects/blog/zero_downtime_deploy.py
+            /dockerProjects/blog/zero_downtime_deploy.py
